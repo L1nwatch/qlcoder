@@ -13,3 +13,6 @@
   * 题目 -【自由之门】，翻墙一下子就有了： `https://en.wikipedia.org/wiki/Great_Wall_of_China`
   * 题目 -【English】，读起来没啥压力：`to learn more English`
   * 题目 -【Get&Post】，比起用 js，自己还是比较喜欢用 Python 解决，手动提交一下，把 cookie 拿下来后用 requests 库 POST 掉，详看对应文件夹下的 `solve.py`
+  * 题目 -【我要建站-1】，自己有个 VPS，放个 html，里面只写自己的用户名，然后过了
+  * 题目 -【彩虹】，mac 自带的工具：数码测色计，选择【显示原生值】，得到 16 进制数后转换一下就可以了
+  * ​
