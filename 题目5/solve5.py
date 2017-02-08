@@ -35,8 +35,8 @@ class Solve:
     @staticmethod
     def print_upper_case(a_str):
         """
-        将字符串中的大写字母转换为小写字母并打印出来
-        :param a_str: str(), 比如 "aAb", 要求打印 "aab"
+        将字符串中的小写字母转换为大写字母并打印出来
+        :param a_str: str(), 比如 "aAb", 要求打印 "AAB"
         :return: None, 打印转换小写后的字符串
         """
         pass
