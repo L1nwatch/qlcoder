@@ -29,6 +29,7 @@
     * 题目 - 【断点续传】，用 Python 脚本， 参考学长的文章知道了有这么一个 `Range: bytes=0-20` 的 HTTP 头，剩下的就是 requests 的事情了
     * 题目 - 【我从哪里来】，自己是用 Chrome 的插件【modify-http-headers】实现修改 HTTP 头的 Referer 字段，后来看评论区推荐了神器 Fiddler，虽然没试
     * 题目 - 【以图搜图-1】，直接上[谷歌识图](https://www.google.com/imghp?hl=zh-CN)
+    * 题目 - 【文件管理】，用 Python 脚本遍历一下文件夹即可
 * 挑战 Python
     * 题目 2 - 【列表排序/字符串逆序/打印字典键】
     * 题目 3 - 【字符串奇数位打印/素数判定/求矩形面积和周长】
