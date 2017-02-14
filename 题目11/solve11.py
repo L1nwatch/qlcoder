@@ -28,17 +28,7 @@ class Solve:
         :param test_list: list(), 比如 [46, 30, 32, 40, 6, 17, 45, 15, 48, 26]
         :return: list(), 根据平均值移动数据后的列表, 比如 [30, 6, 17, 15, 26, 46, 32, 40, 45, 48] ; 平均值直接打印即可
         """
-        average = sum(test_list) / len(test_list)
-        big_list, small_list = list(), list()
-
-        for each in test_list:
-            if each < average:
-                big_list.append(each)
-            else:
-                small_list.append(each)
-
-        print(average)
-        return big_list + small_list
+        pass
 
     @staticmethod
     def count_vocal():
@@ -49,11 +39,7 @@ class Solve:
             "I Am A Student To Take The Examination"
         :return: str(), 转换首字母大写后的字符串, 比如 'I Am A Student To Take The Examination'
         """
-        test_data = input("")
-        answer = list()
-        for each in ["a", "e", "i", "o", "u"]:
-            answer.append(str(test_data.lower().count(each)))
-        return " ".join(answer).rstrip(" ")
+        pass
 
     @staticmethod
     def count_margin_sum(test_list):
@@ -72,20 +58,7 @@ class Solve:
             [[1, 3, 5, 7, 9], [2, 9, 9, 9, 4], [6, 9, 9, 9, 8], [1, 3, 5, 7, 0]]
         :return: int(), 计算得到的和, 比如 61
         """
-        row = len(test_list)
-        column = len(test_list[0])
-        result_list = list()
-
-        for i in range(row):
-            for j in range(column):
-                # 第一行元素, 或最后一行元素
-                if i == 0 or i == row - 1:
-                    result_list.append(test_list[i][j])
-                # 第一列元素, 或最后一列元素
-                elif j == 0 or j == column - 1:
-                    result_list.append(test_list[i][j])
-
-        return sum(result_list)
+        pass
 
 
 if __name__ == "__main__":
