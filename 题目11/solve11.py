@@ -33,11 +33,9 @@ class Solve:
     @staticmethod
     def count_vocal():
         """
-        从标准输入流读入一行英文文本, 每个英文单词以空格隔开, 比如
-            "I am a student to take the examination"
-        要求将其中每个单词的第一个字母改成大写, 然后返回此文本行, 比如
-            "I Am A Student To Take The Examination"
-        :return: str(), 转换首字母大写后的字符串, 比如 'I Am A Student To Take The Examination'
+        读取输入的一行文本, 统计其中元音字母的个数
+        比如 "THIs is a boot", 里面有元音字母 a, e, i, o, u 各 1 0 2 2 0 个
+        :return: str(), 每个元音字母的个数, 比如 "1 0 2 2 0"
         """
         pass
 
