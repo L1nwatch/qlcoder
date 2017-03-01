@@ -17,6 +17,7 @@ except ImportError:
 
 from functools import partial
 from Crypto.Hash import MD5
+from requests.exceptions import ConnectTimeout, ReadTimeout, ConnectionError, TooManyRedirects
 
 __author__ = '__L1n__w@tch'
 
@@ -28,7 +29,7 @@ def return_infinitude_number():
         count += 1
 
 
-def get_verify_code(current_num, check_codes):
+def get_verify_code(current_num, check_codes, file=None):
     print("[*] 开始计算第 {} 票的验证码".format(current_num))
     today = datetime.datetime.today()
     hash_data = "{year}{month}{day}{username}{current_number}".format(year=today.year,
@@ -41,7 +42,10 @@ def get_verify_code(current_num, check_codes):
         # md5(当天日期+你的用户名+当前的票数+x)
         if MD5.new("{}{}".format(hash_data, i).encode("utf8")).hexdigest().startswith("0" * 6):
             check_codes[current_num] = i
-            print("[+] 获取到第 {} 票的验证码为: {}".format(current_num, i))
+            if file:
+                print("[+] 获取到第 {} 票的验证码为: {}".format(current_num, i), file=file)
+            else:
+                print("[+] 获取到第 {} 票的验证码为: {}".format(current_num, i))
             return i
 
 
@@ -103,17 +107,25 @@ def single_thread_solve():
     """
     发现就算用多进程算出所有验证码, 到了明天就失效了, 所以还是一个一个来吧
     """
-    check_codes = dict()
-    for i in range(82, 1000 + 1):
-        # 获取从 1 到 1000 投每一票需要的验证码
-        check_code = get_verify_code(i, check_codes)
+    with open("solve_result.txt", "w") as f:
+        check_codes = dict()
+        for i in range(355, 1000 + 1):
+            # 获取从 1 到 1000 投每一票需要的验证码
+            check_code = get_verify_code(i, check_codes, f)
 
-        # 然后提交
-        url = ("http://www.qlcoder.com/train/handsomerank?_token=d4texP05ci7veIAztvnwe5yETOFhlLWkSaBYC51B"
-               "&user=w%40tch&checkcode={}".format(check_code))
-        response = requests.get(url)
-        if response.status_code == 200:
-            print("已经提交第 {} 票".format(i))
+            # 然后提交
+            url = ("http://www.qlcoder.com/train/handsomerank?_token=d4texP05ci7veIAztvnwe5yETOFhlLWkSaBYC51B"
+                   "&user=w%40tch&checkcode={}".format(check_code))
+
+            while True:
+                try:
+                    response = requests.get(url, timeout=10)
+                    if "验证码出错" not in response.text:
+                        print("[+] 已经提交第 {} 票".format(i), file=f)
+                except (ConnectTimeout, ReadTimeout, ValueError, ConnectionError, TooManyRedirects):
+                    print("[-] 提交第 {} 票出错".format(i), file=f)
+                else:
+                    break
 
 
 if __name__ == "__main__":
