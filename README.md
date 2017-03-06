@@ -43,6 +43,9 @@
     * 题目 - 【历史网页爬取】，用了讨论区推荐的 wayback machine 网站解决的
     * 题目 - 【喜刷刷】，题目不难，就是耗时，遍历每一个数字计算 hash 值，看是否满足前 6 位都是 0 的要求，满足的话就提交。最终用 Python 脚本解决的，顺带学习了一下多进程还有进程池的知识
     * 题目 - 【Java反编译】，先到在线反编译 Java 网站反编译出一个几千行的代码, 然后看讨论区发现 java性能分析线程调优神器 jvisualvm, 直接使用它就可以了, 不过讨论区说是要分析 CPU, 我是通过 IDEA 的终端运行脚本: `java Branches`, 之后跑去 Profiler 看一下, 发现循环的 3 个函数: `eL`、`lC`、`sy`。看到两个相同的数异或应该是 0, 把 3 个函数都改改就跑出来了
+    * 题目 - 【Vim】，按照题目给的那一串打完，可以得到：`the answer is xxxxx`，把 xxxxx 提交上去就对了
+    * 题目 - 【缺失的后缀】，利用强大的命令 `file` 就可以解决了，第一次使用 `file` 得到：`file noname noname: RAR archive data, v1d, os: Win32`，RAR 文件，解压就是了；第二次得到：`0b55b319ebc4b745d931e035cefc1e178a82156: Zip archive data, at least v2.0 to extract`，zip 文件，继续解压；第三次：`0b55b319ebc4b745d931e035cefc1e178a82156f: PC bitmap, Windows 3.x format, 600 x 600 x 32`，bmp 图像文件，打开可以看到图片中的文字，会显示答案的
+    * 题目 - 【打车匹配】，看不懂题目，不知道该用什么算法，结果看讨论区提到了匈牙利算法，而且 Python 还有对应的库：munkres，于是直接用这个库过了
 *   挑战 Python
     * 题目 2 - 【列表排序/字符串逆序/打印字典键】
     * 题目 3 - 【字符串奇数位打印/素数判定/求矩形面积和周长】

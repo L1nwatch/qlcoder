@@ -2,6 +2,7 @@
   <dictionary name="L1n">
     <words>
       <w>gmpy</w>
+      <w>munkres</w>
       <w>stdin</w>
     </words>
   </dictionary>
