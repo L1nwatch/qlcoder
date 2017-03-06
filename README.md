@@ -5,7 +5,7 @@
 另外顺便作为自己千里码练习的地方了...
 
 * 题目来源:
-    * [千里码](http://www.qlcoder.com/explore)
+    * [千里码（qlcoder）](http://www.qlcoder.com/explore)
     * [挑战 Python](http://www.pythontip.com/coding/code_oj)
     * 全国计算机等级考试二级 C 语言
 
