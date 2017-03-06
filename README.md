@@ -21,7 +21,7 @@
     * 题目 -【IP】，ping 一下就得到 IP 地址了
     * 题目 -【Cookie】，chrome 的开发者工具, 检查一下页面 7530, 发现了一个 cookie 存在 Url 编码, 解码一下, 得到一串字符, 其实答案就 4 个字符...还以为要解密那一堆, 不过发现每次刷新都不一样果断知道答案了
     * 题目 -【数据脱敏】，把 md5 放在 [Hash Toolkit](http://hashtoolkit.com/) 一下子就出来了
-    * 题目 -【Basic CSS】，幸好看了讨论区，是 div1 里的第一个框改为 `32px 161px`，div2 里的第二个框改为 `49px 40px`
+    * 题目 -【Basic CSS】，幸好看了讨论区，是 div1 里的第一个框改为 `32px 161px`，div2 里的第二个框改为 `49px 40px`
     * 题目 - 【跑马灯】，看了讨论区，找到 `lottery.marquee.js`，把 `alert(de.toString(CryptoJS.enc.Utf8));` 前的 if 去掉就行，注意在 chrome 下改完得按 `cmd+s(macOS)` 保存，界面会变红，这样才能生效
     * 题目 - 【商品数量-1】，用 Python 脚本解决了，幸好数量不多，初始化为 1000 了
     * 题目 - 【商品数量-2】，用 Python，同样的脚本，慢了许多，最后迫不得已用 gmpy2 库加速了一下，还是挺久，几分钟内能跑出来
