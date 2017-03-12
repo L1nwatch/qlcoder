@@ -46,6 +46,7 @@
     * 题目 - 【Vim】，按照题目给的那一串打完，可以得到：`the answer is xxxxx`，把 xxxxx 提交上去就对了
     * 题目 - 【缺失的后缀】，利用强大的命令 `file` 就可以解决了，第一次使用 `file` 得到：`file noname noname: RAR archive data, v1d, os: Win32`，RAR 文件，解压就是了；第二次得到：`0b55b319ebc4b745d931e035cefc1e178a82156: Zip archive data, at least v2.0 to extract`，zip 文件，继续解压；第三次：`0b55b319ebc4b745d931e035cefc1e178a82156f: PC bitmap, Windows 3.x format, 600 x 600 x 32`，bmp 图像文件，打开可以看到图片中的文字，会显示答案的
     * 题目 - 【打车匹配】，看不懂题目，不知道该用什么算法，结果看讨论区提到了匈牙利算法，而且 Python 还有对应的库：munkres，于是直接用这个库过了
+    * 题目 - 【新词发现】，思路不难, 不过自己居然是先看讨论区的算法再自己写的, 这样不好- -!用了 Python 的 Counter 类来帮助实现的。
 *   挑战 Python
     * 题目 2 - 【列表排序/字符串逆序/打印字典键】
     * 题目 3 - 【字符串奇数位打印/素数判定/求矩形面积和周长】
