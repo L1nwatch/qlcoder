@@ -50,6 +50,7 @@
     * 题目 45 - 【HTML5】，使用 Chrome 的 F12 开发者工具, 到 Application 下可以看到
     * 题目 46 - 【代理IP】，自己是用 requests 库解决的, 网上给了 curl 的方法, 挺不错的: `curl -x 121.201.63.168:8080 http://www.qlcoder.com/train/proxy`
     * 题目 48 - 【OpenSSL】，本来打算用 PyCrypto 解决的, 但是发现给的信息太少了, 用的什么加密模式? IV 怎么拿都不清楚。。。于是还是按照讨论区使用 OpenSSL 吧: `openssl bf -d -in blowfish.data -out test.txt`
+    * 题目 51 - 【Smaller than Smaller】，在线 BWT 工具：`http://kodu.ut.ee/~lipmaa/research/bwt/`，把题目给的字符串，前后加上 `^|` 然后放上去跑，得到结果 `NNNBBBBBBBBBBBNANNNNNBBBBAA^AAAAAAAAAAAAAHAAAAAAAAA|H`，再手工压缩一下就可以了
 *   挑战 Python
     * 题目 2 - 【列表排序/字符串逆序/打印字典键】
     * 题目 3 - 【字符串奇数位打印/素数判定/求矩形面积和周长】
