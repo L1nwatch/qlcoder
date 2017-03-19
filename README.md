@@ -51,6 +51,7 @@
     * 题目 46 - 【代理IP】，自己是用 requests 库解决的, 网上给了 curl 的方法, 挺不错的: `curl -x 121.201.63.168:8080 http://www.qlcoder.com/train/proxy`
     * 题目 48 - 【OpenSSL】，本来打算用 PyCrypto 解决的, 但是发现给的信息太少了, 用的什么加密模式? IV 怎么拿都不清楚。。。于是还是按照讨论区使用 OpenSSL 吧: `openssl bf -d -in blowfish.data -out test.txt`
     * 题目 51 - 【Smaller than Smaller】，在线 BWT 工具：`http://kodu.ut.ee/~lipmaa/research/bwt/`，把题目给的字符串，前后加上 `^|` 然后放上去跑，得到结果 `NNNBBBBBBBBBBBNANNNNNBBBBAA^AAAAAAAAAAAAAHAAAAAAAAA|H`，再手工压缩一下就可以了
+    * 题目 52 -【BGM】，看了讨论区，用了 mpv 的循环播放功能 + 手机下了 SoundHound APP 解决的，突然觉得这 APP 有点逆天，当然仅针对英文歌曲
     * 题目 56 - 【Smallest】，依旧是考验 BWT 算法的，但是上面一道题的网站不能用了，文本太长。没办法，只好自己找实现代码了，发现 stackoverflow 已经有[答案](http://stackoverflow.com/questions/21297887/performance-issues-in-burrows-wheeler-in-python)了。把算法实现复制了下来，再加上 Pypy3 一下子就跑出结果来了
 *   挑战 Python
     * 题目 2 - 【列表排序/字符串逆序/打印字典键】
