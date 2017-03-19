@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 # version: Python3.X
 """ 进行游程编码以及 BWT 的逆运算
+
+参考: https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform
 """
 from itertools import zip_longest
 
@@ -10,12 +12,40 @@ __author__ = '__L1n__w@tch'
 END = "|"
 
 
-def ibwt(r):
+def slow_inverse_bwt(r):
     table = [''] * len(r)
     for _ in r:
         table = sorted([r[m] + table[m] for m in range(len(r))])
     s = [row for row in table if row.endswith(END)][0]
     return s.rstrip(END)
+
+
+def fast_inverse_bwt(r, *args):
+    """Inverse Burrows-Wheeler transform. args is the original index if it was not indicated by an ETX character."""
+
+    first_col = "".join(sorted(r))
+    count = [0] * 256
+    byte_start = [-1] * 256
+    output = [""] * len(r)
+    shortcut = [None] * len(r)
+    # Generates shortcut lists
+    for i in range(len(r)):
+        shortcut_index = ord(r[i])
+        shortcut[i] = count[shortcut_index]
+        count[shortcut_index] += 1
+        shortcut_index = ord(first_col[i])
+        if byte_start[shortcut_index] == -1:
+            byte_start[shortcut_index] = i
+
+    local_index = (r.index("|") if not args else args[0])
+    for i in range(len(r)):
+        # takes the next index indicated by the transformation vector
+        next_byte = r[local_index]
+        output[len(r) - i - 1] = next_byte
+        shortcut_index = ord(next_byte)
+        # assigns local_index to the next index in the transformation vector
+        local_index = byte_start[shortcut_index] + shortcut[local_index]
+    return "".join(output).rstrip("|")
 
 
 def divide_group(text, size):
@@ -66,7 +96,7 @@ def fast_de_rle(encoded_text):
 
 def solve(bwt_rle_text):
     # 先进行游程编码逆运算
-    return ibwt(fast_de_rle(bwt_rle_text))
+    return fast_inverse_bwt(fast_de_rle(bwt_rle_text))
 
 
 if __name__ == "__main__":
@@ -82,4 +112,4 @@ if __name__ == "__main__":
 
     print("[*] 开始进行 bwt 逆运算")
     with open("result.txt", "w") as f:
-        f.write(ibwt(decode_rle))
+        f.write(fast_inverse_bwt(decode_rle))
