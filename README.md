@@ -66,6 +66,7 @@
     * 题目 78 - 【JSON&XML】，看了讨论区, 知道得加上 `<root>`, 于是加完之后再去[在线网站](http://www.freeformatter.com/xml-to-json-converter.html)转一下, 过了
     * 题目 94 - 【GDB】，学习一下 gdb 知识，前后试了 OD 调 exe 说是非法 PE 文件，用 mac 版本也是有莫名其妙的错误，只好跑到 Linux 下运行了，还真的一下调试出来了，`info threads` 后依次 `thread 8` 每个进程直到 `8`，看函数名知道答案了
     * 题目 96 - 【拟合-1】，看讨论区的答案解决的, 主要是学习一下 `numpy.polyfit` 以及 `numpy.loadtxt` 的使用
+    * 题目 97 - 【拟合-2】，改一下自由度就可以过了
     * 题目 98 - 【搜索提示-1】，先后用了 Python 和 Ruby, Python 只有 590+ 准确, Ruby 直接跑好像 630+, 然后手动改了 5 个地方:`ɑ->a、u:->v、r->er、女主播、zhei->zhe` 之后就刚好过了
     * 题目 110 - 【时间线-1】，自己写的跑得太慢了, 参考讨论区改了个快一点的版本, 还是需要十几分钟来跑, 然后居然发现了 Python2 的 random 数值和 Python3 的不一样, 必须得用 Python2 来产生数据, 好吧
     * 题目 120 - 【RSA】，RSA 爆破的一道题, 看了讨论区用了 yafu 神器直接得到质因数了, 剩下的用 gmpy2 库一下子就出来了
