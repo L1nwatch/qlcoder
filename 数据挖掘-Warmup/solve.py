@@ -7,7 +7,6 @@
 """
 import numpy
 from sklearn.naive_bayes import GaussianNB
-from sklearn import preprocessing
 
 __author__ = '__L1n__w@tch'
 
