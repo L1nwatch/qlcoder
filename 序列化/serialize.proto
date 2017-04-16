@@ -1,0 +1,26 @@
+package tutorial;
+
+message Task {
+    required int32 id = 1;
+    optional string title = 2;
+    optional string content = 3;
+    required int32 score = 4;
+    optional string author = 5;
+
+    enum AnswerType {
+        STRING = 0;
+        INT = 1;
+        DOUBLE = 2;
+    }
+
+    message Answer {
+        required int32 data = 1;
+        optional AnswerType type = 2 [default = INT];
+    }
+
+    repeated  Answer answer = 6;
+}
+
+message AddTask {
+    repeated Task task = 1;
+}
