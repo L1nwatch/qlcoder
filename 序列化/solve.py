@@ -12,7 +12,8 @@ def solve():
     with open("145691935645609.data", "rb") as f:
         task = serialize.Task()
         task.parse_from_bytes(f.read())
-        print(sum([each.data for each in task.answer]))
+        # 用生成器推导式比列表推导式快一些
+        print(sum(each.data for each in task.answer))
 
 
 if __name__ == "__main__":
